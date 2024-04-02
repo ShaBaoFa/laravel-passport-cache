@@ -9,14 +9,14 @@ declare(strict_types=1);
 
 namespace Wlfpanda1012\LaravelPassportCache;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\ClientRepository;
 use Laravel\Passport\TokenRepository;
-use Illuminate\Support\Facades\Config;
 
 class CacheServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(TokenRepository::class, function () {
             return new CacheTokenRepository(
@@ -27,7 +27,7 @@ class CacheServiceProvider extends ServiceProvider
             );
         });
         $this->app->singleton(ClientRepository::class, function () {
-            return new CacheClientRepository(
+            return new CacheTokenRepository(
                 Config::get('passport.cache.client.prefix'),
                 Config::get('passport.cache.client.expires_in'),
                 Config::get('passport.cache.client.tags', []),
