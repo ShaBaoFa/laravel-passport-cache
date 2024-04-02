@@ -37,5 +37,11 @@
     },
     "scripts": {
         "cs-fix": "php-cs-fixer fix $1"
+    },
+    "repositories": {
+        "wlfpanda1012_pub": {
+            "type": "composer",
+            "url": "https://g-rtsg9040-composer.pkg.coding.net/composer/wlfpanda1012_pub"
+        }
     }
 }
