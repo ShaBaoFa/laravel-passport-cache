@@ -1,0 +1,16 @@
+{
+    "name": "wlfpanda1012/laravel-passport-cache",
+    "description": "cache passport items",
+    "autoload": {
+        "psr-4": {
+            "Wlfpanda1012\\LaravelPassportCache\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ShaBaoFa",
+            "email": "wlfpanda1012@gmail.com"
+        }
+    ],
+    "require": {}
+}
