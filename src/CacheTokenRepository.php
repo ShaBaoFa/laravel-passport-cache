@@ -39,6 +39,7 @@ class CacheTokenRepository extends TokenRepository
 
     public function __construct(?string $cacheKeyPrefix = null, ?int $expiresInSeconds = null, array $tags = [], ?string $store = null)
     {
+        $this->store = null;
         $this->cacheKeyPrefix = sprintf('%s_token_', $cacheKeyPrefix ?? 'passport_client');
         $this->expiresInSeconds = $expiresInSeconds ?? 5 * 60;
         $this->cacheTags = $tags;
